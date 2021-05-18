@@ -54,9 +54,14 @@ namespace SocialNetworkDashboard.Controllers
             var finalResult = new List<AverageSentimentModel>();
             foreach (var groups in groupsList) { 
                 var sentimentResult = UseModelWithSingleItem(mlContext, model, groups);
+                var tweets = new List<string>();
+                foreach (var result in sentimentResult)
+                {
+                    tweets.Add(result.Text);
+                }
                 var tempSentimentalModel = new AverageSentimentModel
                 {
-                    Tweets = sentimentResult,
+                    Tweets = tweets,
                     Location = sentimentResult[0].Location,
                     AverageSentimentValue = sentimentResult.Average(x => x.SentimentValue)
                 };

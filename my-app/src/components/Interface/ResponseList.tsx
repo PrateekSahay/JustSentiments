@@ -5,5 +5,5 @@ export interface ResponseList {
 export interface Response {
     tweets: string[];
 	location: string;
-	averageSentimentValue: string;
+	averageSentimentValue: number;
 }

@@ -4,7 +4,11 @@ import { ResponseList } from '../Interface/ResponseList';
 
 const SentimentTables = () => {
 
-    const [apiReponse, setApiReponseList] = useState<ResponseList | null>(null);
+    const data: ResponseList = {
+        responseList: []
+    };
+
+    const [apiReponse, setApiReponseList] = useState<ResponseList>(data);
 
     const getSentimentData = () => {
         console.log("about to fetch data");
@@ -13,7 +17,7 @@ const SentimentTables = () => {
         .then(resp => resp.json())
         .then(data => {
             console.log("about to set data");
-            setApiReponseList(data);
+            setApiReponseList({...apiReponse, responseList: data });
             console.log("data", apiReponse);
         });                
     }    

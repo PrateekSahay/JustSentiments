@@ -7,7 +7,7 @@ namespace SocialNetworkDashboard.Models
 {
     public class AverageSentimentModel 
     {
-        public List<SentimentModel> Tweets { get; set; }
+        public List<string> Tweets { get; set; }
 
         public string Location { get; set; }
 
