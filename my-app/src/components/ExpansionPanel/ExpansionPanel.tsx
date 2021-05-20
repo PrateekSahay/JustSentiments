@@ -25,12 +25,16 @@ export const ExpansionPanelSummary = (props: AccordionSummaryProps) => {
     const ContainerStyled = withStyles({
         root: {
             maxHeight: '40px',
-            background: 'blue',
+            background: 'lightskyblue',
             borderRadius: '4px 4px 0px 0px'
         },
         expanded: {
             minHeight: '40px !important',
             maxHeight: '48px !important'
+        },
+        content: {
+            display: 'flex',
+            justifyContent: 'space-between'
         }
     })(MaterialExpansionPanelSummary);
     return <ContainerStyled {...args}>{props.children ? props.children : null}</ContainerStyled>;

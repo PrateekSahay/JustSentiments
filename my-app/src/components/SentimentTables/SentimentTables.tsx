@@ -11,14 +11,10 @@ const SentimentTables = () => {
     const [apiReponse, setApiReponseList] = useState<ResponseList>(data);
 
     const getSentimentData = () => {
-        console.log("about to fetch data");
-        debugger;
         fetch('https://localhost:44326/twitter/average')
         .then(resp => resp.json())
         .then(data => {
-            console.log("about to set data");
             setApiReponseList({...apiReponse, responseList: data });
-            console.log("data", apiReponse);
         });                
     }    
 
